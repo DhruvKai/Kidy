@@ -1,0 +1,168 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Nunito Variable", "Nunito", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Baloo 2 Variable", "Nunito Variable", ui-sans-serif, sans-serif;
+
+  --color-ink: #23253a;
+  --color-muted: #5b5e70;
+  --color-line: #e6e6ec;
+  --color-cream: #f6f6f8;
+  --color-surface: #ffffff;
+  /* Constant in both themes: scrims over photos, text on bright fills, solid fills with white text. */
+  --color-night: #23253a;
+  --color-brand: #c93442;
+  --color-brand-hover: #a92a37;
+  --color-go: #16875f;
+
+  --color-coral-50: #fff3f2;
+  --color-coral-100: #ffe3e0;
+  --color-coral-200: #ffc7c1;
+  --color-coral-300: #ffa39a;
+  --color-coral-400: #ff7d72;
+  --color-coral-500: #f25c5f;
+  --color-coral-600: #c93442;
+  --color-coral-700: #a92a37;
+  --color-coral-800: #852130;
+
+  --color-sunny-50: #fff9e6;
+  --color-sunny-100: #fff0bf;
+  --color-sunny-200: #ffe38a;
+  --color-sunny-300: #ffd45c;
+  --color-sunny-400: #ffc93c;
+  --color-sunny-500: #f5b400;
+  --color-sunny-700: #8a6400;
+
+  --color-ocean-50: #eef8fe;
+  --color-ocean-100: #d6eefc;
+  --color-ocean-200: #ace0f8;
+  --color-ocean-300: #7ccbf1;
+  --color-ocean-400: #4fb3e8;
+  --color-ocean-500: #2b97d4;
+  --color-ocean-600: #1e79b8;
+  --color-ocean-700: #195f91;
+
+  --color-mint-50: #ecfbf5;
+  --color-mint-100: #cff5e5;
+  --color-mint-400: #3cc6a0;
+  --color-mint-600: #16875f;
+  --color-mint-700: #0f6b4b;
+
+  --color-lilac-100: #efe8fd;
+  --color-lilac-400: #a58af0;
+  --color-lilac-600: #6d4fc9;
+
+  --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
+  --radius-3xl: 1.75rem;
+
+  --shadow-soft: 0 2px 10px -2px rgb(35 37 58 / 0.08), 0 1px 3px rgb(35 37 58 / 0.05);
+  --shadow-lift: 0 12px 28px -8px rgb(35 37 58 / 0.18);
+}
+
+/* Dark theme. Same names, darker values, so most utilities flip on their own.
+   Only the storefront opts in (data-theme is set by index.html and StoreLayout);
+   the admin, invoice and shipping label always stay light. Tints (50-200) become
+   dark tints, text steps (600-800) become light enough for AA on the dark surfaces. */
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --color-ink: #ececf3;
+  --color-muted: #a6a9bb;
+  --color-line: #2e3041;
+  --color-cream: #111219;
+  --color-surface: #1b1c27;
+
+  --color-coral-50: #2b161b;
+  --color-coral-100: #3d1c24;
+  --color-coral-200: #5c2632;
+  --color-coral-600: #ff8f8b;
+  --color-coral-700: #ff9f9a;
+  --color-coral-800: #ffc2bd;
+
+  --color-sunny-50: #221d10;
+  --color-sunny-100: #2f2814;
+  --color-sunny-200: #4a3e18;
+  --color-sunny-700: #f4cd55;
+
+  --color-ocean-50: #0f1c27;
+  --color-ocean-100: #142a3b;
+  --color-ocean-200: #1c3d55;
+  --color-ocean-600: #7cc6f0;
+  --color-ocean-700: #a3d7f6;
+
+  --color-mint-50: #0d211a;
+  --color-mint-100: #123026;
+  --color-mint-600: #52d2a6;
+  --color-mint-700: #74ddb9;
+
+  --color-lilac-100: #241d39;
+  --color-lilac-600: #bca8f7;
+
+  --shadow-soft: 0 2px 10px -2px rgb(0 0 0 / 0.5), 0 1px 3px rgb(0 0 0 / 0.35);
+  --shadow-lift: 0 12px 28px -8px rgb(0 0 0 / 0.6);
+  --skeleton-a: #1f202c;
+  --skeleton-b: #292a38;
+}
+
+@layer base {
+  html { -webkit-tap-highlight-color: transparent; }
+  body {
+    @apply bg-cream text-ink font-sans antialiased;
+  }
+  h1, h2, h3, h4 { @apply font-display; line-height: 1.15; }
+  :focus-visible { @apply outline-2 outline-offset-2 outline-ocean-500; }
+  input, select, textarea { @apply text-ink; }
+}
+
+@layer components {
+  /* Shape rule: buttons and chips are full pills, cards 16-20px, inputs 12px. */
+  .btn, .btn-primary, .btn-secondary, .btn-ghost, .btn-sunny, .btn-dark {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 font-bold text-sm transition active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none cursor-pointer select-none whitespace-nowrap;
+  }
+  .btn-primary { @apply bg-brand text-white hover:bg-brand-hover shadow-soft; }
+  .btn-secondary { @apply bg-surface text-ink border border-line hover:border-ink/30; }
+  .btn-ghost { @apply text-ink hover:bg-ink/5; }
+  .btn-sunny { @apply bg-sunny-400 text-night hover:bg-sunny-300; }
+  .btn-dark { @apply bg-ink text-surface hover:bg-ink/90; }
+  .btn-sm { @apply px-3.5 py-1.5 text-xs; }
+  .card { @apply bg-surface rounded-2xl border border-line shadow-soft; }
+  .input {
+    @apply w-full rounded-xl border border-line bg-surface px-3.5 py-2.5 text-sm placeholder:text-muted/70 focus:border-ocean-400 focus:ring-2 focus:ring-ocean-100 outline-none transition;
+  }
+  .label { @apply block text-xs font-bold text-muted mb-1.5 uppercase tracking-wide; }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-3 py-1.5 text-xs font-bold text-ink transition hover:border-ink/40 cursor-pointer;
+  }
+  .chip-active { @apply border-ink bg-ink text-surface hover:border-ink; }
+  .section-title { @apply font-display text-2xl md:text-3xl font-extrabold text-ink; }
+  .container-x { @apply mx-auto w-full max-w-7xl px-4 md:px-6; }
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+}
+
+@media print {
+  .no-print { display: none !important; }
+  body { background: white; }
+}
+
+@keyframes fade { from { opacity: 0 } to { opacity: 1 } }
+@keyframes rise { from { opacity: 0; transform: translateY(24px) } to { opacity: 1; transform: none } }
+@keyframes slideL { from { transform: translateX(-100%) } to { transform: none } }
+@keyframes slideR { from { transform: translateX(100%) } to { transform: none } }
+@keyframes pop { 0% { transform: scale(1) } 40% { transform: scale(1.25) } 100% { transform: scale(1) } }
+@keyframes shimmer { from { background-position: -400px 0 } to { background-position: 400px 0 } }
+
+.skeleton {
+  background: linear-gradient(90deg, var(--skeleton-a, #ececf1) 0px, var(--skeleton-b, #f6f6f9) 160px, var(--skeleton-a, #ececf1) 320px);
+  background-size: 800px 100%;
+  animation: shimmer 1.3s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

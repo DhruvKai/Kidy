@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#c93442" />
+    <meta name="description" content="Kidy: kids clothing from newborn to 14 years. Clickable demo prototype." />
+    <link rel="icon" type="image/svg+xml" href="/Kidy/favicon.svg" />
+    <link rel="preload" as="image" href="/Kidy/images/banners/8819219-800.webp" imagesrcset="/Kidy/images/banners/8819219-800.webp 800w, /Kidy/images/banners/8819219.webp 1600w" imagesizes="(min-width: 768px) 55vw, 100vw" fetchpriority="high" />
+    <title>Kidy | Kids Clothing Store (Demo)</title>
+    <!-- Theme before first paint (same rule as src/lib/theme.js). Admin, invoice and label stay light.
+         The pathname is checked after the deploy base, so it also works on GitHub Pages (/Kidy/). -->
+    <script>(function(){var t='light';try{if(!/^\/(admin|invoice|label)/.test(location.pathname.slice('/Kidy/'.length-1))){var p=localStorage.getItem('kd-theme');if(p==='dark'||(p!=='light'&&matchMedia('(prefers-color-scheme: dark)').matches))t='dark'}}catch(e){}document.documentElement.setAttribute('data-theme',t)})()</script>
+    <script type="module" crossorigin src="/Kidy/assets/index-BJA2hd87.js"></script>
+    <link rel="modulepreload" crossorigin href="/Kidy/assets/jsx-runtime-C0qxM-Xh.js">
+    <link rel="modulepreload" crossorigin href="/Kidy/assets/ui-C7uUChb_.js">
+    <link rel="stylesheet" crossorigin href="/Kidy/assets/index-DUZyaJXA.css">
+  </head>
+  <body>
+    <div id="root">
+      <!-- Static shell so something paints before JavaScript runs. React replaces it. -->
+      <div class="min-h-[100dvh] bg-cream">
+        <div class="flex h-9 items-center justify-center bg-brand text-xs font-bold text-white">Free shipping on orders above ₹499</div>
+        <div class="flex h-16 items-center border-b border-line bg-surface px-4 md:px-6 lg:h-[72px]">
+          <span class="font-display text-2xl font-extrabold text-coral-600">Kidy</span>
+        </div>
+        <div class="mx-auto max-w-7xl px-4 pt-4 md:px-6 md:pt-6"><div class="skeleton h-[420px] rounded-3xl md:h-[460px]"></div></div>
+      </div>
+    </div>
+    <script>if (/^\/(admin|invoice|label)/.test(location.pathname.slice('/Kidy/'.length - 1))) document.getElementById('root').innerHTML = ''</script>
+  </body>
+</html>

@@ -27,7 +27,7 @@ const DEFAULT_CARE = {
   accessories: ['Wipe clean with a soft damp cloth'],
   default: ['Machine wash cold, gentle cycle', 'Do not bleach', 'Line dry in shade', 'Warm iron if needed'],
 }
-const MANUFACTURER = 'KiDDY WiDDY Retail, Tiruppur, Tamil Nadu (demo)'
+const MANUFACTURER = 'Kidy Retail, Tiruppur, Tamil Nadu (demo)'
 
 const key = (size, colour) => `${size}|${colour}`
 const sortSizes = (list) => [...list].sort((a, b) => SIZE_ORDER.indexOf(a) - SIZE_ORDER.indexOf(b))
@@ -66,8 +66,8 @@ export default function ProductForm() {
   const upsertProduct = useStore((s) => s.upsertProduct)
   const nextProductNumber = useStore((s) => s.nextProductNumber)
   const editing = id ? products.find((p) => p.id === id) : null
-  const [number] = useState(() => (editing ? Number(editing.id.replace('kw', '')) : nextProductNumber()))
-  const code = editing?.code || `KW-${number}`
+  const [number] = useState(() => (editing ? Number(editing.id.replace('kd', '')) : nextProductNumber()))
+  const code = editing?.code || `KD-${number}`
   const [form, setForm] = useState(() => (editing ? fromProduct(editing) : blank()))
   const [errors, setErrors] = useState({})
   const [hsnTouched, setHsnTouched] = useState(!!editing)
@@ -81,7 +81,7 @@ export default function ProductForm() {
   const fileRef = useRef(null)
   const typer = useRef(null)
 
-  useEffect(() => { document.title = `${editing ? 'Edit' : 'Add'} product | KiDDY WiDDY admin` }, [editing])
+  useEffect(() => { document.title = `${editing ? 'Edit' : 'Add'} product | Kidy admin` }, [editing])
   useEffect(() => {
     const t = setInterval(() => setElapsed(Math.floor((Date.now() - startedAt) / 1000)), 1000)
     return () => { clearInterval(t); clearInterval(typer.current) }
@@ -178,7 +178,7 @@ export default function ProductForm() {
     const slug = editing?.slug || `${form.title.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}-${number}`
     const product = {
       ...(editing || { rating: 0, reviewCount: 0, sold: 0, createdDaysAgo: 0 }),
-      id: `kw${number}`, code, slug,
+      id: `kd${number}`, code, slug,
       title: form.title.trim(), description: form.description.trim() || `${form.title.trim()} in soft ${form.fabric.toLowerCase()}.`,
       brand: form.brand, category: form.category, sub: form.sub, gender: form.gender,
       sizes: sortSizes(form.sizes), colours: form.colours, fabric: form.fabric, occasion: form.occasion, tags: form.tags,

@@ -172,7 +172,7 @@ export default function Product() {
   useEffect(() => {
     if (!product) return
     viewProduct(product.id)
-    document.title = `${product.title} | KiDDY WiDDY`
+    document.title = `${product.title} | Kidy`
     setColour(firstInStock)
     setSize(product.sizes.length === 1 ? product.sizes[0] : null)
     setSizeError(false)

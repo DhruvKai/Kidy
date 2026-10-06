@@ -27,7 +27,7 @@ export default function Orders() {
   const tab = params.get('tab') || 'all'
   const [q, setQ] = useState('')
   const [shipping, setShipping] = useState(null)
-  useEffect(() => { document.title = 'Orders | KiDDY WiDDY admin' }, [])
+  useEffect(() => { document.title = 'Orders | Kidy admin' }, [])
 
   const t = TABS.find((x) => x.id === tab) || TABS[0]
   const list = useMemo(() => orders.filter((o) => t.test(o) && (!q || `${o.id} ${o.customer.name} ${o.customer.phone} ${o.address.city}`.toLowerCase().includes(q.toLowerCase()))), [orders, t, q])

@@ -19,7 +19,7 @@ export default function Returns() {
   const completeReturn = useStore((s) => s.completeReturn)
   const [tab, setTab] = useState('review')
   const [mode, setMode] = useState({})
-  useEffect(() => { document.title = 'Returns | KiDDY WiDDY admin' }, [])
+  useEffect(() => { document.title = 'Returns | Kidy admin' }, [])
   const withReturns = orders.filter((o) => o.returnRequest)
   const list = withReturns.filter(TABS.find((t) => t[0] === tab)[2])
 

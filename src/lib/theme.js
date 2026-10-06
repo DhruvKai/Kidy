@@ -3,7 +3,7 @@ import { create } from 'zustand'
 
 // Per-viewer colour theme: 'light', 'dark' or 'system' (follow the device, the default).
 // index.html applies the same rule before first paint, so keep the key and logic in sync.
-const KEY = 'kw-theme'
+const KEY = 'kd-theme'
 const darkQuery = () => window.matchMedia('(prefers-color-scheme: dark)')
 
 function readPref() {

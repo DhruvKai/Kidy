@@ -12,8 +12,8 @@ const word = (w, offset) => w.split('').map((ch, i) => <span key={i} className={
 
 export function Logo({ className = '', small = false }) {
   return (
-    <Link to="/" aria-label="KiDDY WiDDY home" className={`inline-block whitespace-nowrap font-display font-extrabold leading-none tracking-tight ${small ? 'text-xl' : 'text-2xl md:text-[1.7rem]'} ${className}`}>
-      {word('KiDDY', 0)} {word('WiDDY', 5)}
+    <Link to="/" aria-label="Kidy home" className={`inline-block whitespace-nowrap font-display font-extrabold leading-none tracking-tight ${small ? 'text-xl' : 'text-2xl md:text-[1.7rem]'} ${className}`}>
+      {word('Kidy', 0)}
     </Link>
   )
 }

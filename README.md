@@ -1,4 +1,4 @@
-# KiDDY WiDDY: clickable store prototype
+# Kidy: clickable store prototype
 
 A frontend-only prototype of a FirstCry-style kids clothing store for India, built to show a client before the real build on Shopify. It covers the full shopping flow (home, search, filters, product page, bag, checkout, tracking, returns, GST invoice) and a no-code admin (dashboard, add product with auto variants, bulk CSV upload, orders, inventory, discounts, returns, customers).
 
@@ -22,7 +22,7 @@ Requires Node 18 or newer.
 **Netlify Drop (no account setup or CLI needed):**
 1. Run `npm run build`.
 2. Open https://app.netlify.com/drop and drag the `dist` folder onto the page.
-3. Netlify gives you a URL straight away. Optionally rename the site (for example `kiddy-widdy-demo`) under *Site configuration*.
+3. Netlify gives you a URL straight away. Optionally rename the site (for example `kidy-demo`) under *Site configuration*.
 
 **Vercel:** run `npx vercel --prod` in this folder. It detects Vite on its own.
 

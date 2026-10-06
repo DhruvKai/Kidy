@@ -63,7 +63,7 @@ export default function Listing() {
   }, [base, filters, sort])
 
   const title = isSearch ? (q ? `Results for "${q}"` : 'Search') : sub ? `${cat?.name || collection?.name} ${sub}` : cat ? `${cat.name} clothing` : collection?.name
-  useEffect(() => { document.title = `${title} | KiDDY WiDDY` }, [title])
+  useEffect(() => { document.title = `${title} | Kidy` }, [title])
   useEffect(() => { setLimit(PAGE) }, [pathname, params])
 
   if (!base) return <NotFound />

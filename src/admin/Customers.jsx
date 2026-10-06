@@ -8,7 +8,7 @@ import { downloadCsv } from './ProductList'
 export default function Customers() {
   const orders = useStore((s) => s.orders)
   const [q, setQ] = useState('')
-  useEffect(() => { document.title = 'Customers | KiDDY WiDDY admin' }, [])
+  useEffect(() => { document.title = 'Customers | Kidy admin' }, [])
 
   const customers = useMemo(() => {
     const map = new Map()
@@ -33,7 +33,7 @@ export default function Customers() {
       <PageHeader
         title="Customers"
         subtitle={`${customers.length} customers. Tag them for WhatsApp campaigns and festive offers.`}
-        actions={<button type="button" onClick={() => downloadCsv('kiddy-widdy-customers.csv', customers.map((c) => ({ name: c.name, phone: c.phone, email: c.email, city: c.city, state: c.state, orders: c.orders, total_spent: c.spent, last_order: c.last.slice(0, 10), tags: c.tags.join('|') })))} className="btn-secondary"><DownloadSimple size={16} /> Export CSV</button>}
+        actions={<button type="button" onClick={() => downloadCsv('kidy-customers.csv', customers.map((c) => ({ name: c.name, phone: c.phone, email: c.email, city: c.city, state: c.state, orders: c.orders, total_spent: c.spent, last_order: c.last.slice(0, 10), tags: c.tags.join('|') })))} className="btn-secondary"><DownloadSimple size={16} /> Export CSV</button>}
       />
       <div className="relative mb-4">
         <MagnifyingGlass size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-muted" />

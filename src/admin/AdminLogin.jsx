@@ -11,7 +11,7 @@ export default function AdminLogin() {
   const [email, setEmail] = useState(DEMO.adminEmail)
   const [password, setPassword] = useState(DEMO.adminPassword)
   const [error, setError] = useState('')
-  useEffect(() => { document.title = 'Store admin | KiDDY WiDDY' }, [])
+  useEffect(() => { document.title = 'Store admin | Kidy' }, [])
 
   const submit = (e) => {
     e.preventDefault()

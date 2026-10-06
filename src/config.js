@@ -1,23 +1,23 @@
 // Everything a salesperson might tweak before a client demo lives here.
 export const STORE = {
-  name: 'KiDDY WiDDY',
+  name: 'Kidy',
   tagline: 'Little clothes, big smiles',
   supportPhone: '+91 98765 43210',
   whatsapp: '919876543210',
-  email: 'hello@kiddywiddy.in',
-  // Address from the client's listing (Kiddy Widdy, Kullu). GSTIN and PAN are still placeholders.
+  email: 'hello@kidy.in',
+  // Sample address for the demo. GSTIN and PAN are placeholders too.
   // `state` decides CGST+SGST (same state) vs IGST on invoices.
   seller: {
-    legalName: 'Kiddy Widdy',
-    address: 'Kullu Bhuntar Road, Shastri Nagar, near Indian Oil petrol pump, Kullu, Himachal Pradesh 175101',
-    state: 'Himachal Pradesh',
-    stateCode: '02',
-    gstin: '02ABCDE1234F1Z5',
+    legalName: 'Kidy Retail',
+    address: 'Shop 14, Rang Bazaar Complex, Malviya Nagar, Jaipur, Rajasthan 302017',
+    state: 'Rajasthan',
+    stateCode: '08',
+    gstin: '08ABCDE1234F1Z5',
     pan: 'ABCDE1234F',
   },
   grievanceOfficer: {
     name: 'Grievance Officer (name to be added)',
-    email: 'grievance@kiddywiddy.in',
+    email: 'grievance@kidy.in',
     phone: '+91 98765 43210',
     hours: 'Mon-Sat, 10am-6pm',
   },
@@ -53,6 +53,6 @@ export function flashSaleEndsAt(now = new Date()) {
 export const DEMO = {
   otp: '123456',
   phone: '9876543210',
-  adminEmail: 'owner@kiddywiddy.in',
+  adminEmail: 'owner@kidy.in',
   adminPassword: 'demo1234',
 }

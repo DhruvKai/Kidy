@@ -57,7 +57,7 @@ export default function Dashboard() {
   const [metric, setMetric] = useState('sales')
   const [range, setRange] = useState(30)
   const [asTable, setAsTable] = useState(false)
-  useEffect(() => { document.title = 'Dashboard | KiDDY WiDDY admin' }, [])
+  useEffect(() => { document.title = 'Dashboard | Kidy admin' }, [])
 
   // Sample history plus anything placed during the demo, bucketed by day.
   const series = useMemo(() => {

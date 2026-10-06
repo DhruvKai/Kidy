@@ -50,8 +50,8 @@ const CARE = {
 }
 
 function mk(n, o) {
-  const id = `kw${n}`
-  const code = `KW-${n}`
+  const id = `kd${n}`
+  const code = `KD-${n}`
   const slug = `${o.title.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}-${n}`
   const h = hash(id)
   const variants = []
@@ -70,7 +70,7 @@ function mk(n, o) {
   const isAccessory = o.category === 'accessories'
   return {
     id, code, slug,
-    brand: 'KiDDY WiDDY Basics',
+    brand: 'Kidy Basics',
     fabric: 'Cotton',
     occasion: 'Casual',
     tags: [],
@@ -84,7 +84,7 @@ function mk(n, o) {
     sold: 40 + (h % 900),
     createdDaysAgo: o.tags?.includes('new') ? h % 12 : 20 + (h % 120),
     countryOfOrigin: 'India',
-    manufacturer: 'KiDDY WiDDY Retail, Tiruppur, Tamil Nadu (demo)',
+    manufacturer: 'Kidy Retail, Tiruppur, Tamil Nadu (demo)',
     description: `${o.hl}. ${SUB_COPY[o.sub] || ''}`.trim(),
     care: isFootwear ? CARE.footwear : isAccessory ? CARE.accessory : o.sub === 'Ethnic Wear' ? CARE.ethnic : CARE.default,
     status: 'published',
@@ -167,4 +167,4 @@ export const SEED_PRODUCTS = [
 ]
 
 // Today's deals (extra discount while the daily timer runs).
-export const DEAL_PRICES = { kw1014: 749, kw1103: 599, kw1201: 749, kw1307: 849, kw1109: 1499, kw1402: 499 }
+export const DEAL_PRICES = { kd1014: 749, kd1103: 599, kd1201: 749, kd1307: 849, kd1109: 1499, kd1402: 499 }

@@ -115,7 +115,7 @@ export default function Account() {
   const user = useStore((s) => s.user)
   const openLogin = useUI((s) => s.openLogin)
   const tab = params.get('tab') || 'orders'
-  useEffect(() => { document.title = 'My account | KiDDY WiDDY' }, [])
+  useEffect(() => { document.title = 'My account | Kidy' }, [])
   const needsLogin = !user && tab !== 'wishlist'
 
   return (

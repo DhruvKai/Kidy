@@ -11,7 +11,7 @@ export default function OrderSuccess() {
   const { id } = useParams()
   const order = useStore((s) => s.orders.find((o) => o.id === id))
   const user = useStore((s) => s.user)
-  useEffect(() => { document.title = 'Order placed | KiDDY WiDDY' }, [])
+  useEffect(() => { document.title = 'Order placed | Kidy' }, [])
   if (!order) return <NotFound />
   const eta = checkPincode(order.address.pincode)
   const trackTo = user && user.phone === order.customer.phone ? `/account/orders/${order.id}` : `/track?id=${order.id}&phone=${order.customer.phone}`

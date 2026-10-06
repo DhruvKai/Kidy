@@ -140,7 +140,7 @@ export default function OrderDetail() {
   const order = useStore((s) => s.orders.find((o) => o.id === id))
   const user = useStore((s) => s.user)
   const openLogin = useUI((s) => s.openLogin)
-  useEffect(() => { document.title = `Order ${id} | KiDDY WiDDY` }, [id])
+  useEffect(() => { document.title = `Order ${id} | Kidy` }, [id])
   if (!order) return <NotFound />
   if (!user || user.phone !== order.customer.phone) {
     return (

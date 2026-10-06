@@ -282,7 +282,7 @@ export default function Home() {
   const newArrivals = useMemo(() => products.filter((p) => p.tags.includes('new')).sort((a, b) => a.createdDaysAgo - b.createdDaysAgo), [products])
   const recent = recentIds.map((id) => products.find((p) => p.id === id)).filter(Boolean)
 
-  useEffect(() => { document.title = 'KiDDY WiDDY | Kids clothing from newborn to 14 years' }, [])
+  useEffect(() => { document.title = 'Kidy | Kids clothing from newborn to 14 years' }, [])
 
   return (
     <>

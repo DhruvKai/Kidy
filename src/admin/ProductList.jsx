@@ -35,13 +35,13 @@ export default function ProductList() {
   const [cat, setCat] = useState('')
   const [status, setStatus] = useState('')
   const [confirmDelete, setConfirmDelete] = useState(null)
-  useEffect(() => { document.title = 'Products | KiDDY WiDDY admin' }, [])
+  useEffect(() => { document.title = 'Products | Kidy admin' }, [])
 
   const list = useMemo(() => products.filter((p) =>
     (!cat || p.category === cat) && (!status || p.status === status) &&
     (!q || `${p.title} ${p.code} ${p.sub}`.toLowerCase().includes(q.toLowerCase()))), [products, q, cat, status])
 
-  const exportCsv = () => downloadCsv('kiddy-widdy-catalogue.csv', products.map((p) => ({
+  const exportCsv = () => downloadCsv('kidy-catalogue.csv', products.map((p) => ({
     code: p.code, title: p.title, category: p.category, subcategory: p.sub, mrp: p.mrp, price: p.price,
     sizes: p.sizes.join('|'), colours: p.colours.join('|'), total_stock: totalStock(p), status: p.status,
   })))

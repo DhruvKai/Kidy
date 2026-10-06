@@ -20,7 +20,7 @@ function WhatsAppButton() {
   const raised = pathname.startsWith('/p/') || pathname === '/cart' || pathname === '/checkout'
   return (
     <a
-      href={`https://wa.me/${STORE.whatsapp}?text=${encodeURIComponent('Hi KiDDY WiDDY, I need help with my order.')}`}
+      href={`https://wa.me/${STORE.whatsapp}?text=${encodeURIComponent('Hi Kidy, I need help with my order.')}`}
       target="_blank"
       rel="noreferrer"
       aria-label="Chat with us on WhatsApp"
@@ -72,8 +72,8 @@ export default function StoreLayout() {
   useStoreTheme()
   useEffect(() => {
     const full = () => toast('Browser storage is full, so new changes will not be saved after reload.', 'error')
-    window.addEventListener('kw-storage-full', full)
-    return () => window.removeEventListener('kw-storage-full', full)
+    window.addEventListener('kd-storage-full', full)
+    return () => window.removeEventListener('kd-storage-full', full)
   }, [])
   return (
     <div className="flex min-h-[100dvh] flex-col">

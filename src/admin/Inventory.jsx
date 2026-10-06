@@ -14,7 +14,7 @@ export default function Inventory() {
   const setVariantStock = useStore((s) => s.setVariantStock)
   const [view, setView] = useState('low')
   const [q, setQ] = useState('')
-  useEffect(() => { document.title = 'Inventory | KiDDY WiDDY admin' }, [])
+  useEffect(() => { document.title = 'Inventory | Kidy admin' }, [])
 
   const rows = useMemo(() => products.flatMap((p) => p.variants.map((v) => ({ ...v, product: p }))), [products])
   const low = rows.filter((r) => r.stock > 0 && r.stock <= COMMERCE.lowStockThreshold)

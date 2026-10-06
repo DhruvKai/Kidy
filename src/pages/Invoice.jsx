@@ -98,7 +98,7 @@ export default function Invoice({ label = false }) {
         <div className="mx-auto max-w-[210mm] bg-white p-6 text-[12px] leading-relaxed text-ink shadow-soft md:p-10 print:p-0 print:shadow-none">
           <div className="flex flex-wrap items-start justify-between gap-4 border-b-2 border-ink pb-4">
             <div>
-              <p className="font-display text-2xl font-extrabold">KiDDY WiDDY</p>
+              <p className="font-display text-2xl font-extrabold">Kidy</p>
               <p className="font-bold">{s.legalName}</p>
               <p className="max-w-xs text-muted">{s.address}</p>
               <p>GSTIN: <b>{s.gstin}</b>, PAN: {s.pan}</p>

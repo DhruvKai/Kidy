@@ -11,25 +11,25 @@ const CUSTOMERS = {
   ananya: { name: 'Ananya Das', phone: '9830567890', email: 'ananya.demo@example.com', line1: '21B, Lake Gardens', line2: 'Near Rabindra Sarobar', city: 'Kolkata', state: 'West Bengal', pincode: '700001' },
   neha: { name: 'Neha Agarwal', phone: '9829678901', email: 'neha.demo@example.com', line1: 'C-14, Malviya Nagar', line2: '', city: 'Jaipur', state: 'Rajasthan', pincode: '302001' },
   arjun: { name: 'Arjun Nair', phone: '9847789012', email: 'arjun.demo@example.com', line1: 'Kailas, MG Road', line2: 'Ernakulam', city: 'Kochi', state: 'Kerala', pincode: '682001' },
-  simran: { name: 'Simran Kaur', phone: '9872890123', email: 'simran.demo@example.com', line1: 'Flat 6, Cedar Court', line2: 'Chhota Shimla', city: 'Shimla', state: 'Himachal Pradesh', pincode: '171001' },
+  simran: { name: 'Simran Kaur', phone: '9872890123', email: 'simran.demo@example.com', line1: 'Flat 6, Lakeview Court', line2: 'Fatehpura', city: 'Udaipur', state: 'Rajasthan', pincode: '313001' },
   pooja: { name: 'Pooja Mehta', phone: '9825901234', email: 'pooja.demo@example.com', line1: '5, Shanti Kunj Society', line2: 'Navrangpura', city: 'Ahmedabad', state: 'Gujarat', pincode: '380001' },
 }
 
 // [id, customer, hoursAgo, status, payment, items [productId, size, colour, qty], extras]
 const RAW = [
-  ['KW260101', 'priya', 9 * 24, 'delivered', 'upi', [['kw1112', '8-10Y', 'Pink', 1], ['kw1105', '8-10Y', 'Black', 1]]],
-  ['KW260115', 'priya', 26, 'shipped', 'cod', [['kw1201', '0-3M', 'Multicolour', 1], ['kw1304', '0-3M', 'Pink', 1]]],
-  ['KW260108', 'aman', 2, 'placed', 'cod', [['kw1005', '6-8Y', 'Yellow', 1]]],
-  ['KW260109', 'sneha', 5, 'placed', 'upi', [['kw1103', '2-3Y', 'Cream', 2], ['kw1121', '3-4Y', 'Yellow', 1]]],
-  ['KW260110', 'rohit', 20, 'confirmed', 'card', [['kw1009', '6-8Y', 'Black', 1]]],
-  ['KW260111', 'fatima', 30, 'packed', 'upi', [['kw1208', '3-6M', 'White', 2]]],
-  ['KW260112', 'karthik', 50, 'shipped', 'netbanking', [['kw1307', '4-5Y', 'Blue', 1], ['kw1001', '5-6Y', 'Grey', 2]]],
-  ['KW260113', 'ananya', 74, 'out_for_delivery', 'cod', [['kw1109', '4-5Y', 'Orange', 1]]],
-  ['KW260104', 'neha', 5 * 24, 'delivered', 'upi', [['kw1102', '6-8Y', 'Multicolour', 1], ['kw1101', '6-8Y', 'Blush', 1]], { coupon: 'FIRST10' }],
-  ['KW260105', 'arjun', 6 * 24, 'delivered', 'wallet', [['kw1014', '4-5Y', 'Grey', 1], ['kw1013', '2-3Y', 'Cream', 1]]],
-  ['KW260106', 'simran', 4 * 24, 'return_requested', 'upi', [['kw1110', '2-3Y', 'Orange', 1]], { returnRequest: { type: 'exchange', reason: 'Size too small', exchangeSize: '3-4Y', note: 'Beautiful outfit, just need one size up please.' } }],
-  ['KW260107', 'pooja', 7 * 24, 'cancelled', 'cod', [['kw1116', '5-6Y', 'Sky Blue', 1]]],
-  ['KW260102', 'rohit', 12 * 24, 'refunded', 'upi', [['kw1306', '4-5Y', 'Silver', 1]], { returnRequest: { type: 'return', reason: 'Size too large', refundMode: 'source', note: '' } }],
+  ['KD260101', 'priya', 9 * 24, 'delivered', 'upi', [['kd1112', '8-10Y', 'Pink', 1], ['kd1105', '8-10Y', 'Black', 1]]],
+  ['KD260115', 'priya', 26, 'shipped', 'cod', [['kd1201', '0-3M', 'Multicolour', 1], ['kd1304', '0-3M', 'Pink', 1]]],
+  ['KD260108', 'aman', 2, 'placed', 'cod', [['kd1005', '6-8Y', 'Yellow', 1]]],
+  ['KD260109', 'sneha', 5, 'placed', 'upi', [['kd1103', '2-3Y', 'Cream', 2], ['kd1121', '3-4Y', 'Yellow', 1]]],
+  ['KD260110', 'rohit', 20, 'confirmed', 'card', [['kd1009', '6-8Y', 'Black', 1]]],
+  ['KD260111', 'fatima', 30, 'packed', 'upi', [['kd1208', '3-6M', 'White', 2]]],
+  ['KD260112', 'karthik', 50, 'shipped', 'netbanking', [['kd1307', '4-5Y', 'Blue', 1], ['kd1001', '5-6Y', 'Grey', 2]]],
+  ['KD260113', 'ananya', 74, 'out_for_delivery', 'cod', [['kd1109', '4-5Y', 'Orange', 1]]],
+  ['KD260104', 'neha', 5 * 24, 'delivered', 'upi', [['kd1102', '6-8Y', 'Multicolour', 1], ['kd1101', '6-8Y', 'Blush', 1]], { coupon: 'FIRST10' }],
+  ['KD260105', 'arjun', 6 * 24, 'delivered', 'wallet', [['kd1014', '4-5Y', 'Grey', 1], ['kd1013', '2-3Y', 'Cream', 1]]],
+  ['KD260106', 'simran', 4 * 24, 'return_requested', 'upi', [['kd1110', '2-3Y', 'Orange', 1]], { returnRequest: { type: 'exchange', reason: 'Size too small', exchangeSize: '3-4Y', note: 'Beautiful outfit, just need one size up please.' } }],
+  ['KD260107', 'pooja', 7 * 24, 'cancelled', 'cod', [['kd1116', '5-6Y', 'Sky Blue', 1]]],
+  ['KD260102', 'rohit', 12 * 24, 'refunded', 'upi', [['kd1306', '4-5Y', 'Silver', 1]], { returnRequest: { type: 'return', reason: 'Size too large', refundMode: 'source', note: '' } }],
 ]
 
 export function buildSeedOrders(products, now = Date.now()) {

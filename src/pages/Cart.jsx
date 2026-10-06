@@ -115,7 +115,7 @@ export default function Cart() {
   const removeSaved = useStore((s) => s.removeSaved)
   const wishlist = useStore((s) => s.wishlist)
 
-  useEffect(() => { document.title = 'Your bag | KiDDY WiDDY' }, [])
+  useEffect(() => { document.title = 'Your bag | Kidy' }, [])
   const summary = useMemo(() => computeCart({ items: cart, products, couponCode, coupons }), [cart, products, couponCode, coupons])
   const blocked = summary.lines.some((l) => l.stock === 0)
   const savedLines = saved.map((s) => ({ ...s, product: products.find((p) => p.id === s.productId) })).filter((s) => s.product)

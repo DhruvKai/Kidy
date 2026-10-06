@@ -8,7 +8,7 @@ import TrackingTimeline from '../components/TrackingTimeline'
 import { StatusPill, Modal } from '../components/ui'
 
 const MESSAGES = {
-  placed: (o) => `Hi ${o.customer.name.split(' ')[0]}, thanks for shopping with KiDDY WiDDY! Order ${o.id} is placed.`,
+  placed: (o) => `Hi ${o.customer.name.split(' ')[0]}, thanks for shopping with Kidy! Order ${o.id} is placed.`,
   confirmed: (o) => `Order ${o.id} is confirmed and will be packed soon.`,
   packed: (o) => `Order ${o.id} is packed and ready to ship.`,
   shipped: (o) => `Order ${o.id} has shipped with ${o.shipment?.courier}. Track: AWB ${o.shipment?.awb}.`,
@@ -62,7 +62,7 @@ export default function AdminOrderDetail() {
   const updateOrder = useStore((s) => s.updateOrder)
   const [shipOpen, setShipOpen] = useState(false)
   const [cancelOpen, setCancelOpen] = useState(false)
-  useEffect(() => { document.title = `${id} | KiDDY WiDDY admin` }, [id])
+  useEffect(() => { document.title = `${id} | Kidy admin` }, [id])
   useEffect(() => { if (order?.isNew) updateOrder(order.id, (o) => ({ ...o, isNew: false })) }, [order?.id]) // eslint-disable-line react-hooks/exhaustive-deps
 
   if (!order) return <p className="py-10 text-center text-muted">Order not found. <Link to="/admin/orders" className="font-bold underline">Back to orders</Link></p>

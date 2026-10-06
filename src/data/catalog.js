@@ -59,7 +59,7 @@ export const COLOURS = {
 
 export const FABRICS = ['Cotton', 'Organic Cotton', 'Cotton Knit', 'Cotton Silk', 'Cotton Blend', 'Fleece', 'Denim', 'Linen Blend', 'Rayon', 'Silk Blend', 'Art Silk', 'Banarasi Silk', 'Jacquard', 'Tulle', 'Satin', 'Poly Viscose', 'Polyester', 'Swim Lycra', 'Genuine Leather', 'PU Leather', 'Patent PU', 'Soft PU', 'Canvas', 'Mesh', 'Wool Blend', 'Polycarbonate']
 export const OCCASIONS = ['Casual', 'Festive', 'Party', 'Wedding', 'Birthday', 'Sleepwear', 'Sports', 'School', 'Beach', 'Dance', 'Gifting']
-export const BRANDS = ['KiDDY WiDDY Basics', 'Little Lotus', 'Playday', 'Party Pixie', 'Tiny Toes']
+export const BRANDS = ['Kidy Basics', 'Little Lotus', 'Playday', 'Party Pixie', 'Tiny Toes']
 
 // HSN codes per sub-category (set once per category, as the spec asks).
 export const HSN_BY_SUB = {

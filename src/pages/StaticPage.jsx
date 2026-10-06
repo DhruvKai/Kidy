@@ -116,7 +116,7 @@ export default function StaticPage() {
   const { slug } = useParams()
   const page = PAGES[slug]
   const title = page?.title || TITLES[slug]
-  useEffect(() => { if (title) document.title = `${title} | KiDDY WiDDY` }, [title])
+  useEffect(() => { if (title) document.title = `${title} | Kidy` }, [title])
   if (!title) return <NotFound />
 
   return (

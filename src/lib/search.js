@@ -35,8 +35,8 @@ function getFuse(products) {
 export function searchProducts(products, query) {
   const q = query.trim()
   if (!q) return []
-  const code = q.match(/^kw-?(\d{3,5})$/i)
-  if (code) return products.filter((p) => p.code === `KW-${code[1]}`)
+  const code = q.match(/^kd-?(\d{3,5})$/i)
+  if (code) return products.filter((p) => p.code === `KD-${code[1]}`)
   const tokens = norm(q).split(/\s+/).filter((t) => t.length > 1 && !STOPWORDS.has(t))
   if (!tokens.length) return []
   const fuse = getFuse(products)

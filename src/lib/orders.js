@@ -44,7 +44,7 @@ export const COURIERS = [
 
 export const RETURN_REASONS = ['Size too small', 'Size too large', 'Quality not as expected', 'Received wrong item', 'Item damaged', 'Colour different from photo', 'Changed my mind']
 
-export const makeOrderId = () => `KW${Math.floor(260000 + Math.random() * 99999)}`
+export const makeOrderId = () => `KD${Math.floor(260000 + Math.random() * 99999)}`
 export const makeAwb = () => `${Math.floor(1e11 + Math.random() * 9e11)}`
 
 export const canCancel = (o) => ['placed', 'confirmed', 'packed'].includes(o.status)

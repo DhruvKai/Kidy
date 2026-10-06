@@ -32,7 +32,7 @@ function seed() {
 const safeStorage = createJSONStorage(() => ({
   getItem: (k) => { try { return localStorage.getItem(k) } catch { return null } },
   setItem: (k, v) => {
-    try { localStorage.setItem(k, v) } catch { window.dispatchEvent(new CustomEvent('kw-storage-full')) }
+    try { localStorage.setItem(k, v) } catch { window.dispatchEvent(new CustomEvent('kd-storage-full')) }
   },
   removeItem: (k) => { try { localStorage.removeItem(k) } catch { /* ignore */ } },
 }))
@@ -224,7 +224,7 @@ export const useStore = create(
         }),
 
       // ---------- Catalogue (admin) ----------
-      nextProductNumber: () => Math.max(2000, ...get().products.map((p) => Number(p.id.replace('kw', '')) || 0)) + 1,
+      nextProductNumber: () => Math.max(2000, ...get().products.map((p) => Number(p.id.replace('kd', '')) || 0)) + 1,
       upsertProduct: (product) =>
         set((s) => (s.products.some((p) => p.id === product.id)
           ? { products: s.products.map((p) => (p.id === product.id ? product : p)) }
@@ -234,7 +234,7 @@ export const useStore = create(
         const n = get().nextProductNumber()
         const copy = {
           ...structuredClone(src),
-          id: `kw${n}`, code: `KW-${n}`, slug: `${src.slug.replace(/-\d+$/, '')}-copy-${n}`,
+          id: `kd${n}`, code: `KD-${n}`, slug: `${src.slug.replace(/-\d+$/, '')}-copy-${n}`,
           title: `${src.title} (Copy)`, status: 'draft', sold: 0, reviewCount: 0, createdDaysAgo: 0,
         }
         copy.variants = copy.variants.map((v) => ({ ...v, sku: v.sku.replace(src.code, copy.code) }))
@@ -257,7 +257,7 @@ export const useStore = create(
       adminLogout: () => set({ adminAuthed: false }),
       resetDemo: () => set({ ...seed() }),
     }),
-    { name: 'kiddy-widdy-demo', version: 1, storage: safeStorage },
+    { name: 'kidy-demo', version: 1, storage: safeStorage },
   ),
 )
 

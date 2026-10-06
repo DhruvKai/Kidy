@@ -19,7 +19,7 @@ export default function Discounts() {
   const [open, setOpen] = useState(false)
   const [form, setForm] = useState(EMPTY)
   const [errors, setErrors] = useState({})
-  useEffect(() => { document.title = 'Discounts | KiDDY WiDDY admin' }, [])
+  useEffect(() => { document.title = 'Discounts | Kidy admin' }, [])
   const deals = products.filter((p) => DEAL_PRICES[p.id])
 
   const save = (e) => {

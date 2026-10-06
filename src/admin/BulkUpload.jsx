@@ -32,7 +32,7 @@ export default function BulkUpload() {
   const [rows, setRows] = useState(null)
   const [fileName, setFileName] = useState('')
   const fileRef = useRef(null)
-  useEffect(() => { document.title = 'Bulk upload | KiDDY WiDDY admin' }, [])
+  useEffect(() => { document.title = 'Bulk upload | Kidy admin' }, [])
 
   const parse = (text, name) => {
     const res = Papa.parse(text.trim(), { header: true, skipEmptyLines: true })
@@ -49,8 +49,8 @@ export default function BulkUpload() {
     const text = await fetch(asset('sample-products.csv')).then((r) => r.text())
     parse(text, 'sample-products.csv')
   }
-  const template = () => downloadCsv('kiddy-widdy-product-template.csv', [
-    { title: 'Rocket Print Cotton T-Shirt', category: 'boys', subcategory: 'T-Shirts', gender: 'boys', brand: 'KiDDY WiDDY Basics', mrp: 599, price: 379, sizes: '4-5Y|5-6Y|6-8Y', colours: 'Navy|Grey', stock_per_variant: 12, fabric: 'Cotton', occasion: 'Casual', description: 'Soft cotton tee with a rocket print.', image: '' },
+  const template = () => downloadCsv('kidy-product-template.csv', [
+    { title: 'Rocket Print Cotton T-Shirt', category: 'boys', subcategory: 'T-Shirts', gender: 'boys', brand: 'Kidy Basics', mrp: 599, price: 379, sizes: '4-5Y|5-6Y|6-8Y', colours: 'Navy|Grey', stock_per_variant: 12, fabric: 'Cotton', occasion: 'Casual', description: 'Soft cotton tee with a rocket print.', image: '' },
   ])
 
   const valid = rows?.filter((r) => !r.errs.length) || []
@@ -58,18 +58,18 @@ export default function BulkUpload() {
     let n = nextProductNumber()
     const list = valid.map((r) => {
       const num = n++
-      const code = `KW-${num}`
+      const code = `KD-${num}`
       const stock = Number(r.raw.stock_per_variant) || 0
       return {
-        id: `kw${num}`, code,
+        id: `kd${num}`, code,
         slug: `${r.raw.title.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}-${num}`,
-        title: r.raw.title.trim(), brand: r.raw.brand || 'KiDDY WiDDY Basics', category: r.cat.slug, sub: r.raw.subcategory.trim(),
+        title: r.raw.title.trim(), brand: r.raw.brand || 'Kidy Basics', category: r.cat.slug, sub: r.raw.subcategory.trim(),
         gender: ['boys', 'girls', 'unisex'].includes(r.raw.gender) ? r.raw.gender : 'unisex',
         sizes: r.sizes, colours: r.colours, fabric: r.raw.fabric || 'Cotton', occasion: r.raw.occasion || 'Casual', tags: ['new'],
         mrp: r.mrp, price: r.price, images: [r.raw.image ? (r.raw.image.startsWith('/') ? asset(r.raw.image) : r.raw.image) : r.cat.image],
         variants: r.colours.flatMap((c) => r.sizes.map((s) => ({ sku: `${code}-${s.replace(/[^0-9A-Z]/gi, '')}-${c.slice(0, 3).toUpperCase()}`, size: s, colour: c, stock }))),
         hsn: HSN_BY_SUB[r.raw.subcategory.trim()] || '6209', weight: 260, rating: 0, reviewCount: 0, sold: 0, createdDaysAgo: 0,
-        countryOfOrigin: 'India', manufacturer: 'KiDDY WiDDY Retail, Tiruppur, Tamil Nadu (demo)',
+        countryOfOrigin: 'India', manufacturer: 'Kidy Retail, Tiruppur, Tamil Nadu (demo)',
         description: r.raw.description || r.raw.title, care: ['Machine wash cold, gentle cycle', 'Line dry in shade'], status: 'published',
       }
     })

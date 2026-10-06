@@ -1,4 +1,4 @@
-# KiDDY WiDDY: client demo script
+# Kidy: client demo script
 
 A 10 to 12 minute walkthrough. Open the site on your phone, or use Chrome DevTools in iPhone size, for the store part. Use a laptop for the admin part.
 
@@ -10,11 +10,11 @@ Before every meeting: scroll to the footer and click **Reset demo data** (or use
 | --- | --- |
 | Customer login (OTP) | Mobile `98765 43210`, OTP `123456`. This customer already has 2 orders. |
 | Admin login | `/admin`. The email and password are pre-filled. Click Log in. |
-| Coupons | `FIRST10` (10% off, max ₹200), `KIDDY100` (₹100 off above ₹999), `FESTIVE15` (Festive Edit items) |
+| Coupons | `FIRST10` (10% off, max ₹200), `KIDY100` (₹100 off above ₹999), `FESTIVE15` (Festive Edit items) |
 | Automatic offer | Any 3 tees for ₹999 (add 3 T-shirts or tops) |
-| Pincodes | `175101` Kullu (next day, COD), `160017` Chandigarh (2 days), `560001` Bengaluru, `781001` Guwahati (no COD), `744101` Port Blair (not serviceable) |
-| Track without login | `/track`: order `KW260112`, mobile `9849456789` |
-| Product code search | Type `KW-1005` in search |
+| Pincodes | `302017` Jaipur (next day, COD), `110001` New Delhi (2 days), `560001` Bengaluru, `781001` Guwahati (no COD), `744101` Port Blair (not serviceable) |
+| Track without login | `/track`: order `KD260112`, mobile `9849456789` |
+| Product code search | Type `KD-1005` in search |
 
 ## The story
 
@@ -24,14 +24,14 @@ Before every meeting: scroll to the footer and click **Reset demo data** (or use
 4. **Product page.** Open any product:
    - Tap **Size chart**, then *Find my size* (enter the child's age).
    - Show the honest "only N left" on low-stock sizes.
-   - Enter pincode `175101`: delivery date and COD availability appear. Delivery times are counted from the shop in Kullu.
+   - Enter pincode `302017`: delivery date and COD availability appear. Delivery times are counted from the shop in Jaipur.
    - Scroll to the legal info (MRP, country of origin, manufacturer, seller), which the e-commerce rules require.
 5. **Bag.** Add 3 tees to show the bundle discount applying itself and the free-shipping bar filling up, then apply `FIRST10`.
 6. **Checkout.**
    - Log in with OTP, or check out as a guest and type pincode `560001`: city and state fill in by themselves.
    - Pick **UPI**, then **Simulate successful payment**. You can also show *Simulate failed payment*.
    - Or pick **Cash on delivery** to show the OTP confirmation that cuts fake COD orders.
-7. **After the order.** Show the order success page, then **GST invoice** (IGST for orders outside Himachal Pradesh, CGST and SGST inside it, HSN codes, amount in words; order `KW260106` in the admin ships to Shimla and shows the CGST and SGST split). Then go to *My account*, open the order and its tracking, and show **Return or exchange**.
+7. **After the order.** Show the order success page, then **GST invoice** (IGST for orders outside Rajasthan, CGST and SGST inside it, HSN codes, amount in words; order `KD260106` in the admin ships to Udaipur and shows the CGST and SGST split). Then go to *My account*, open the order and its tracking, and show **Return or exchange**.
 8. **Switch to the admin** (`/admin` on the laptop). Start with the dashboard: sales chart, today's numbers, and "needs your attention".
 9. **Add a product in under 5 minutes** (the main selling point). Click *Add product*. A timer shows in the corner.
    - Type a name, add 2 keywords and press **Write with AI**.

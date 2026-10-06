@@ -62,7 +62,7 @@ export default function Checkout() {
   const [summaryOpen, setSummaryOpen] = useState(false)
   const placed = useRef(false)
 
-  useEffect(() => { document.title = 'Checkout | KiDDY WiDDY' }, [])
+  useEffect(() => { document.title = 'Checkout | Kidy' }, [])
   useEffect(() => {
     if (addresses.length && !addrId) setAddrId((addresses.find((a) => a.isDefault) || addresses[0]).id)
   }, [addresses, addrId])
